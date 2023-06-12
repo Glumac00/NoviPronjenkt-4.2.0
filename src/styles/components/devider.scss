@@ -1,0 +1,26 @@
+.devider {
+  background-color: var(--color-black);
+  height: 1px;
+  &--mb {
+    &--sm {
+      margin-bottom: 0.5rem;
+    }
+    &--md {
+      margin-bottom: 1rem;
+    }
+    &--lg {
+      margin-bottom: 2rem;
+    }
+  }
+  &--mt {
+    &--sm {
+      margin-top: 0.5rem;
+    }
+    &--md {
+      margin-top: 1rem;
+    }
+    &--lg {
+      margin-top: 2rem;
+    }
+  }
+}

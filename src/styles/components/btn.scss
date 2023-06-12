@@ -1,0 +1,22 @@
+.btn {
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: var(--border-rounded);
+  cursor: pointer;
+  transition: all 175ms ease-in-out;
+  &:hover {
+    background-color: var(--color-blue-500);
+  }
+  &--green {
+    background-color: var(--color-green-500);
+    color: var(--color-white);
+  }
+  &--red {
+    background-color: var(--color-red-500);
+    color: var(--color-white);
+  }
+  &--blue {
+    background-color: var(--color-blue-500);
+    color: var(--color-white);
+  }
+}

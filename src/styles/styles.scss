@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+:root {
+  //colors
+  --color-white: #fff;
+  --color-gray: #7e7e7e;
+  --color-black: #333;
+  --color-green-500: #2ecc71;
+  --color-red-500: #c0392b;
+  --color-blue-500: #2980b9;
+
+  //borders
+  --border-rounded: 0.5rem;
+}
+
+@import "./components/btn.scss";
+@import "./components/devider.scss";
+@import "./components/container.scss";
+@import "./components/input.scss";

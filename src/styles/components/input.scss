@@ -1,0 +1,58 @@
+.input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--border-rounded);
+  border: 1px solid var(--color-red-500);
+  transition: all 250ms ease-in-out;
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-blue-500);
+  }
+
+  //Default-Size
+  &--md {
+    font-size: 1rem;
+    width: 100%;
+  }
+  &--hasIcon {
+    padding-right: 2.25rem;
+  }
+  &__wrapper {
+    position: relative;
+    max-width: 17.5rem;
+  }
+  &__icon {
+    position: absolute;
+    right: 0.625rem;
+    top: 50%;
+    svg {
+      transform: translateY(-50%);
+    }
+    display: flex;
+  }
+
+  //Small-Size
+  &--sm {
+    font-size: 0.75rem;
+    width: 75%;
+    & ~ .inpit__icon svg {
+      width: 1.25rem;
+    }
+    & ~ .input__icon {
+      right: 4.625rem;
+    }
+  }
+
+  //Large-Size
+  &--lg {
+    font-size: 1.25rem;
+    width: 125%;
+    & ~ .input__icon svg {
+      width: 2rem;
+    }
+    & ~ .input__icon {
+      right: -3.625rem;
+    }
+  }
+}
