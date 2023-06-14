@@ -5,6 +5,7 @@ import Button from "./components/button";
 import Container from "./components/container";
 import Devider from "./components/devider";
 import Input from "./components/input";
+import Modal from "./components/modal";
 import "./styles/styles.scss";
 type ObjType = {
   [key: string]: string;
@@ -25,12 +26,11 @@ function App() {
 
   return (
     <>
-      <Container>
-        <h1> Small yellow rubber duck </h1>
-        <Devider marginTop="md" marginBottom="md" />
-        <Button text="Moj novi gumbitč" color="red" />
-        <Devider marginTop="md" marginBottom="md" />
-      </Container>
+      <h1> Small yellow rubber duck </h1>
+      <Devider marginTop="md" marginBottom="md" />
+      <Button text="Moj novi gumbitč" color="red" />
+      <Devider marginTop="md" marginBottom="md" />
+
       <Container>
         <h2>neki drugi naslov tipa podnaslov</h2>
         <div>peepeepoopoo</div>
@@ -40,7 +40,7 @@ function App() {
           placeholder="First Name..."
           icon={<StarIcon />}
           onChange={(value: string) => {
-            handleInputsValue(value, "First Name");
+            handleInputsValue(value, "firstName");
           }}
         />
         <Devider marginTop="md" marginBottom="md" />
@@ -49,15 +49,19 @@ function App() {
           placeholder="Last name..."
           icon={<ChartIcon />}
           onChange={(value: string) => {
-            handleInputsValue(value, "Last Name");
+            handleInputsValue(value, "lastName");
           }}
         />
+        <Devider marginTop="md" marginBottom="md" />
         <Input
+          disable={true}
           value={brandNewState}
           onChange={(value: string) => {
             setBrandNewState(value);
           }}
         />
+        <Devider marginTop="md" marginBottom="md" />
+        <Modal content="My name is walter hartwell white" />
       </Container>
     </>
   );

@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import StarIcon from "../assets_icons/staricon";
 
 type InputProps = {
   placeholder?: string;
@@ -7,21 +6,26 @@ type InputProps = {
   size?: "md" | "sm" | "lg";
   value: string;
   onChange: (value: string) => void;
+  disable?: boolean;
 };
 
 const Input = ({
   placeholder = "",
   icon,
-  size,
+  size = "md",
   value,
   onChange,
+  disable = false,
 }: InputProps) => {
   return (
     <div className="input__wrapper">
       <input
+        disabled={disable}
         onChange={(e) => onChange(e.target.value)}
         value={value}
-        className={`input input--${size} ${icon && "input--hasIcon"}`}
+        className={`input input--${size} ${icon && "input--hasIcon"} ${
+          disable && "input--disable"
+        }`}
         type="text"
         placeholder={placeholder}
       />
