@@ -7,6 +7,7 @@ type InputProps = {
   value: string;
   onChange: (value: string) => void;
   disable?: boolean;
+  name?: string;
 };
 
 const Input = ({
@@ -16,10 +17,12 @@ const Input = ({
   value,
   onChange,
   disable = false,
+  name,
 }: InputProps) => {
   return (
     <div className="input__wrapper">
       <input
+        name={name}
         disabled={disable}
         onChange={(e) => onChange(e.target.value)}
         value={value}

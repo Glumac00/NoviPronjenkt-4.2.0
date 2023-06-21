@@ -18,9 +18,8 @@ const Modal = ({ content }: modalProps) => {
             <h2>Modal title</h2>
           </div>
           <div className="modal__body">{content}</div>
-          <div className="modal__footer">
-            <Button color="red" onClick={onCloseModal} text="Close"></Button>
-          </div>
+          <div className="modal__footer"></div>
+          <Button color="red" onClick={onCloseModal} text="Close"></Button>
         </div>
       </div>
     </>

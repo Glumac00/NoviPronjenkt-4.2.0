@@ -1,0 +1,31 @@
+.sidebar {
+  position: fixed;
+  top: 6rem;
+  left: -20rem;
+  width: 17rem;
+  background-color: var(--color-red-500);
+  color: white;
+  height: calc(100vh - 5rem);
+  border-radius: var(--border-rounded);
+  padding: 1rem;
+  transition: 250ms ease-in-out;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-blue-500);
+  }
+
+  &.isActive {
+    left: 1rem;
+  }
+}

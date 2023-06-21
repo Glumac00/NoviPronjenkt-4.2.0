@@ -1,5 +1,9 @@
 * {
   box-sizing: border-box;
+  @font-face {
+    font-family: "Helvetica";
+    src: url("https://fonts.google.com/specimen/Roboto") format("truetype");
+  }
 }
 body {
   margin: 0;
@@ -8,11 +12,14 @@ body {
 :root {
   //colors
   --color-white: #fff;
-  --color-gray: #7e7e7e;
+  --color-gray-500: #7e7e7e;
+  --color-gray-750: #b6b6b6;
   --color-black: #333;
   --color-green-500: #2ecc71;
   --color-red-500: #c0392b;
+  --color-red-750: #e24433;
   --color-blue-500: #2980b9;
+  --color-blue-750: #33a4f0;
 
   //borders
   --border-rounded: 0.5rem;
@@ -23,3 +30,6 @@ body {
 @import "./components/container.scss";
 @import "./components/input.scss";
 @import "./components/modal.scss";
+@import "./components/header.scss";
+@import "./components/sidebar.scss";
+@import "./components/progressbar.scss";
