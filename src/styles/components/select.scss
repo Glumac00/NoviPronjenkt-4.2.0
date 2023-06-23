@@ -1,0 +1,41 @@
+.select {
+  position: relative;
+  width: 20rem;
+  &__action {
+    border: 1px solid var(--color-gray-500);
+    border-radius: var(--border-rounded);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    &.isActive {
+      svg {
+        transform: rotate(180deg);
+        transition: all 250ms ease-in-out;
+      }
+    }
+  }
+  &__list {
+    width: 20rem;
+    position: absolute;
+    background-color: var(--color-gray-750);
+    border: 1px solid var(--color-gray-500);
+    border-radius: var(--border-rounded);
+    padding: 1rem 0.5rem;
+    &__item {
+      margin-bottom: 0.25rem;
+      user-select: none;
+      padding: 1rem 0.5rem;
+      transition: all 250ms ease-in-out;
+      border-radius: var(--border-rounded);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:hover {
+        background-color: var(--color-white);
+        padding: 1rem 0.25rem;
+      }
+    }
+  }
+}

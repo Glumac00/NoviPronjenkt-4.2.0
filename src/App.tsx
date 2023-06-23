@@ -10,6 +10,8 @@ import Layout from "./components/layout";
 import NoMatch from "./features/nomatch";
 import "./styles/styles.scss";
 import ProgressBar from "./features/progressbar";
+import LoaderPage from "./features/loader/loader-page";
+import SelectPage from "./features/select/select-page";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +23,10 @@ function App() {
       path: "/contact",
       element: <Contact />,
     },
+    {
+      path: "/loader",
+      element: <LoaderPage />,
+    },
   ]);
   return (
     <>
@@ -29,6 +35,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="progress-bar" element={<ProgressBar value={90} />} />
+          <Route path="loader" element={<LoaderPage />} />
+          <Route path="select" element={<SelectPage />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
