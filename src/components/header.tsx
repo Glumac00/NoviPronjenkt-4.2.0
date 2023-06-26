@@ -24,6 +24,9 @@ const Header = ({ toggleSidebar }: HeaderProps) => {
         <NavLink className="header__nav__link" to={"/contact"}>
           Contact us
         </NavLink>
+        <NavLink className="header__nav__link" to={"/animals"}>
+          Animals API
+        </NavLink>
       </nav>
     </div>
   );

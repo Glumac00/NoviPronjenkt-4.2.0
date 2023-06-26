@@ -1,7 +1,11 @@
 import { useState } from "react";
 import Button from "../../components/button";
 
-const Loader = () => {
+type LoaderProps = {
+  isActive?: boolean;
+};
+
+const Loader = ({ isActive }: LoaderProps) => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const handleLoader = () => {
     setIsShown((current) => !current);
@@ -11,13 +15,11 @@ const Loader = () => {
   };
   return (
     <div>
-      <div>Turn on the loader!</div>
       {isShown && (
         <div className="loader__wrapper">
           <div className="loader"></div>
         </div>
       )}
-      <Button text="Turn on loader" color="red" onClick={handleLoader} />
     </div>
   );
 };

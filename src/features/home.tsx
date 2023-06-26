@@ -27,12 +27,12 @@ const Home = () => {
 
   return (
     <>
-      <h1>Small yellow rubber duck</h1>
-      <Devider marginTop="md" marginBottom="md" />
-      <Button text="Moj novi gumbitč" color="red" />
-      <Devider marginTop="md" marginBottom="md" />
-
       <Container>
+        <h1>Small yellow rubber duck</h1>
+        <Devider marginTop="md" marginBottom="md" />
+        <Button text="Moj novi gumbitč" color="red" />
+        <Devider marginTop="md" marginBottom="md" />
+
         <h2>neki drugi naslov tipa podnaslov</h2>
         <div>peepeepoopoo</div>
         <Devider marginTop="md" marginBottom="md" />
