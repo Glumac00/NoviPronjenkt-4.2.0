@@ -20,5 +20,13 @@
     &.isActive {
       background-color: var(--color-blue-500);
     }
+    &.isDisabled {
+      opacity: 0.5;
+      user-select: none;
+      cursor: not-allowed;
+    }
+    svg {
+      display: block;
+    }
   }
 }

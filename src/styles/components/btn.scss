@@ -23,4 +23,32 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
+  &--floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: var(--color-red-500);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+    box-shadow: 0 0.125rem 0.75 0 var(--color-gray-500);
+    @media (min-width: $media-sm) {
+      bottom: 4rem;
+      right: 4rem;
+    }
+    &:hover {
+      transform: scale(1.1);
+      background-color: var(--color-blue-500);
+    }
+    svg {
+      display: block;
+      width: 2rem;
+    }
+  }
 }

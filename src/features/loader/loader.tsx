@@ -1,24 +1,19 @@
-import { useState } from "react";
-import Button from "../../components/button";
-
 type LoaderProps = {
-  isActive?: boolean;
+  isActive: boolean;
+  text?: string;
 };
 
-const Loader = ({ isActive }: LoaderProps) => {
-  const [isShown, setIsShown] = useState<boolean>(false);
-  const handleLoader = () => {
-    setIsShown((current) => !current);
-    setTimeout(() => {
-      setIsShown(false);
-    }, 2000);
+const Loader = ({ isActive, text }: LoaderProps) => {
+  const renderLoader = () => {
+    return <div className="loader"></div>;
   };
   return (
     <div>
-      {isShown && (
-        <div className="loader__wrapper">
-          <div className="loader"></div>
-        </div>
+      {isActive && (
+        <>
+          <div className="loader__wrapper"></div>
+          <div>{text ? text : renderLoader()}</div>
+        </>
       )}
     </div>
   );

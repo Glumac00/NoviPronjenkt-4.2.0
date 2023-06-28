@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { OptionType } from "./select-page";
 import ArrowDown from "../../assets_icons/arrowdown";
 
@@ -7,15 +6,19 @@ type SelectProps = {
   options: OptionType[];
   onChange: (option: OptionType) => void;
   placeholder?: string;
+  defaultValue?: OptionType[];
 };
 
 const Select = ({
   options,
   onChange,
   placeholder = "Select an option",
+  defaultValue,
 }: SelectProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const [activeOption, setIsActiveOption] = useState<OptionType | null>(null);
+  const [activeOption, setIsActiveOption] = useState<OptionType | null>(
+    defaultValue ? defaultValue : null
+  );
 
   return (
     <div className="select">

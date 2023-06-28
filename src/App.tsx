@@ -13,6 +13,7 @@ import ProgressBar from "./features/progressbar";
 import LoaderPage from "./features/loader/loader-page";
 import SelectPage from "./features/select/select-page";
 import Animals from "./features/animals/animals";
+import NewAnimal from "./features/animals/newAnimal";
 
 function App() {
   const router = createBrowserRouter([
@@ -38,7 +39,15 @@ function App() {
           <Route path="progress-bar" element={<ProgressBar value={90} />} />
           <Route path="loader" element={<LoaderPage />} />
           <Route path="select" element={<SelectPage />} />
-          <Route path="animals" element={<Animals />} />
+
+          <Route path="animals" element={<Animals />}>
+            <Route path="/animals/new" element={<NewAnimal />} />
+            <Route
+              path="animals/:animalId"
+              element={<>dosli smo na page neke zivotinje</>}
+            />
+          </Route>
+
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
