@@ -6,7 +6,7 @@ type SelectProps = {
   options: OptionType[];
   onChange: (option: OptionType) => void;
   placeholder?: string;
-  defaultValue?: OptionType[];
+  defaultValue?: OptionType;
 };
 
 const Select = ({
@@ -16,7 +16,7 @@ const Select = ({
   defaultValue,
 }: SelectProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const [activeOption, setIsActiveOption] = useState<OptionType | null>(
+  const [activeOption, setActiveOption] = useState<OptionType | null>(
     defaultValue ? defaultValue : null
   );
 
@@ -39,7 +39,7 @@ const Select = ({
                 onClick={() => {
                   onChange(option);
                   setIsActive(false);
-                  setIsActiveOption(option);
+                  setActiveOption(option);
                 }}
               >
                 {option.label}

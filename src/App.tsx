@@ -1,9 +1,4 @@
-import {
-  Route,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./features/home";
 import Contact from "./features/contact";
 import Layout from "./components/layout";
@@ -16,20 +11,6 @@ import Animals from "./features/animals/animals";
 import NewAnimal from "./features/animals/newAnimal";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
-    },
-    {
-      path: "/loader",
-      element: <LoaderPage />,
-    },
-  ]);
   return (
     <>
       <Routes>
@@ -40,14 +21,15 @@ function App() {
           <Route path="loader" element={<LoaderPage />} />
           <Route path="select" element={<SelectPage />} />
 
-          <Route path="animals" element={<Animals />}>
-            <Route path="/animals/new" element={<NewAnimal />} />
-            <Route
-              path="animals/:animalId"
-              element={<>dosli smo na page neke zivotinje</>}
-            />
-          </Route>
-
+          <Route path="animals" element={<Animals />} />
+          <Route path="animals/new" element={<NewAnimal />} />
+          <Route
+            path="animals/:animalId"
+            element={<>Došli smo na stranicu neke životinje</>}
+          />
+          {/* Using path="*" means "match anything", so this route
+                acts like a catch-all for URLs that we don't have explicit
+                routes for. */}
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
