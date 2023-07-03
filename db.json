@@ -1,22 +1,6 @@
 {
   "animals": [
     {
-      "id": "1",
-      "name": "Lion",
-      "species": "Panthera leo",
-      "animalClass": "Mammal",
-      "diet": "Carnivore",
-      "habitat": "Grasslands and savannas"
-    },
-    {
-      "id": "2",
-      "name": "Elephant",
-      "species": "Loxodonta africana",
-      "animalClass": "Mammal",
-      "diet": "Herbivore",
-      "habitat": "Forests and grasslands"
-    },
-    {
       "id": "3",
       "name": "Tiger",
       "species": "Panthera tigris",
@@ -151,22 +135,6 @@
       "animalClass": "Mammal",
       "diet": "Herbivore",
       "habitat": "Tropical rainforests"
-    },
-    {
-      "id": "20",
-      "name": "Ostrich",
-      "species": "Struthio camelus",
-      "animalClass": "Bird",
-      "diet": "Omnivore",
-      "habitat": "Grasslands and deserts"
-    },
-    {
-      "animalClass": "\tHydrochoerus",
-      "diet": "Herbavore",
-      "habitat": "Urban cities",
-      "name": "Capybara",
-      "species": "H. hydrochaeris",
-      "id": "82a2f246-d6b0-42dc-9621-24cc5b7e9740"
     }
   ]
 }

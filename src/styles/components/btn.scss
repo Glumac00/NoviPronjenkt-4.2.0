@@ -19,6 +19,18 @@
     background-color: var(--color-blue-500);
     color: var(--color-white);
   }
+  &--sm {
+    padding: 8px;
+    border-radius: 50%;
+  }
+  &--md {
+    padding: 1rem 3rem;
+    border-radius: var(--border-rounded);
+  }
+  &--lg {
+    padding: 2rem;
+    border-radius: var(--border-rounded);
+  }
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

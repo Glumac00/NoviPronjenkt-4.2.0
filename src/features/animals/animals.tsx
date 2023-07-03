@@ -58,7 +58,7 @@ const Animals = () => {
         setTimeout(() => {
           setAnimals(data);
           setLoading(false);
-        }, 2000);
+        }, 1000);
       });
   };
 
@@ -78,12 +78,13 @@ const Animals = () => {
       method: "DELETE",
       headers: dataHeaders,
     })
-      .then((response) => {
-        return response.json();
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
       })
-      .then((data) => {
-        console.log("obrisan");
-        fetchAnimalsData;
+      .then(() => {
+        fetchAnimalsData();
       })
       .catch((err) => console.log(err));
   };

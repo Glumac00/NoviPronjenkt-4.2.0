@@ -12,13 +12,43 @@ export const dataHeaders = {
   "Content-Type": "application/json",
 };
 
-const initialData: Omit<AnimalType, "id"> = {
-  animalClass: "",
-  diet: "",
-  habitat: "",
+type InputsType = {
+  id: string;
+  label: string;
+};
+
+export const initialData: Omit<AnimalType, "id"> = {
   name: "",
   species: "",
+  diet: "",
+  habitat: "",
+  animalClass: "",
 };
+
+export const baseInputs: InputsType[] = [
+  {
+    id: "name",
+    label: "name of an animal",
+  },
+  {
+    id: "species",
+    label: "species of an animal",
+  },
+  {
+    id: "diet",
+    label: "diet of an animal",
+  },
+  {
+    id: "habitat",
+    label: "habitat of an animal",
+  },
+  {
+    id: "animalClass",
+    label: "class of an animal",
+  },
+];
+
+//ZADACA - spojit create i edit animal
 
 const NewAnimal = () => {
   const [inputsValue, setInputsValue] = useState<ValuesType>(initialData);
@@ -88,36 +118,17 @@ const NewAnimal = () => {
       <Devider />
       {error && <div className="message message--error">{error}</div>}
       <div>
-        <Field
-          id="name"
-          label="Name of animal"
-          value={inputsValue.name}
-          onChange={(newValue) => handleInputsValue(newValue, "name")}
-        />
-        <Field
-          id="species"
-          label="Name of species"
-          value={inputsValue.species}
-          onChange={(newValue) => handleInputsValue(newValue, "species")}
-        />
-        <Field
-          id="diet"
-          label="Name of diet"
-          value={inputsValue.diet}
-          onChange={(newValue) => handleInputsValue(newValue, "diet")}
-        />
-        <Field
-          id="habitat"
-          label="Name of habitat"
-          value={inputsValue.habitat}
-          onChange={(newValue) => handleInputsValue(newValue, "habitat")}
-        />
-        <Field
-          id="animalClass"
-          label="Name of animal Class"
-          value={inputsValue.animalClass}
-          onChange={(newValue) => handleInputsValue(newValue, "animalClass")}
-        />
+        {baseInputs.map((field) => {
+          return (
+            <Field
+              key={field.id}
+              id={field.id}
+              label={field.label}
+              value={inputsValue[field.id]}
+              onChange={(newValue) => handleInputsValue(newValue, field.id)}
+            />
+          );
+        })}
       </div>
       <Button text="Add animal" onClick={() => onSubmit(inputsValue)} />
     </Container>

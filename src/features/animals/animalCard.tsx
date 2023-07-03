@@ -3,6 +3,7 @@ import PawIcon from "./../../assets/images/paw.png";
 import HabitatIcon from "./../../assets/images/habitat.png";
 import DietIcon from "./../../assets/images/diet.png";
 import Button from "../../components/button";
+import { useNavigate } from "react-router-dom";
 
 type AnimalProps = {
   animal: AnimalType;
@@ -11,6 +12,7 @@ type AnimalProps = {
 
 const AnimalCard = ({ animal, onDelete }: AnimalProps) => {
   const { name, species, animalClass, diet, habitat, id } = animal;
+  const navigate = useNavigate();
 
   return (
     <div className="card">
@@ -22,6 +24,13 @@ const AnimalCard = ({ animal, onDelete }: AnimalProps) => {
             " ",
             "-"
           )}`}
+        />
+        <img
+          src={`https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png`}
+          width={70}
+          height={70}
+          className="card__title__image__edit"
+          onClick={() => navigate(`/animals/${id}`)}
         />
         <div>
           <div>{name}</div>
@@ -48,8 +57,13 @@ const AnimalCard = ({ animal, onDelete }: AnimalProps) => {
         </span>
         <span>{habitat}</span>
       </div>
-      <div>
-        <Button text="Delete" color="red" onClick={() => onDelete(id)} />
+      <div className="card__button__wrapper">
+        <Button
+          text="Delete"
+          color="red"
+          onClick={() => onDelete(id)}
+          size="sm"
+        />
       </div>
     </div>
   );

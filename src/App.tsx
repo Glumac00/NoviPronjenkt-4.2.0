@@ -9,6 +9,7 @@ import LoaderPage from "./features/loader/loader-page";
 import SelectPage from "./features/select/select-page";
 import Animals from "./features/animals/animals";
 import NewAnimal from "./features/animals/newAnimal";
+import AnimalEdit from "./features/animals/animalEdit";
 
 function App() {
   return (
@@ -17,16 +18,13 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="progress-bar" element={<ProgressBar value={90} />} />
+          <Route path="progress-bar" element={<ProgressBar value={25} />} />
           <Route path="loader" element={<LoaderPage />} />
           <Route path="select" element={<SelectPage />} />
 
           <Route path="animals" element={<Animals />} />
           <Route path="animals/new" element={<NewAnimal />} />
-          <Route
-            path="animals/:animalId"
-            element={<>Došli smo na stranicu neke životinje</>}
-          />
+          <Route path="animals/:animalId" element={<AnimalEdit />} />
           {/* Using path="*" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
